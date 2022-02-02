@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import Card from '../Components/Character_Card.js'
-import { StyleSheet, Text, View, Button, SafeAreaView, Image, FlatList, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Button, SafeAreaView, Image, FlatList, ScrollView, Pressable } from 'react-native';
 import {  } from 'react-native';
 
 character_list = []
@@ -11,10 +11,11 @@ export default function ListScreen() {
         <ScrollView style={styles.list}>
           <Card screenName="Edit" style={styles.card}/>
         </ScrollView>
-        <Button
-          title="New Character"
-          onPress={console.log('dog')}
-        />
+        <Pressable
+          onPress={console.log('dog')}style={styles.button}
+          >
+            <Text style={styles.text}>New Character</Text>
+          </Pressable>
     </SafeAreaView>
   );
 }
@@ -24,16 +25,27 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#000',
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingTop: '5%',
-    minHeight: '90%',
+    justifyContent: 'space-between',
+    paddingTop: '2%',
+    paddingBottom: '2%',
+    minHeight: '100%',
 
   },
   list:{
     minHeight: '80%',
+    borderColor: 'purple',
+    borderWidth: 1,
   },
+  button:{
+    alignItems:'center',
+    justifyContent: 'center',
+    minHeight: '10%',
+    width: '100%',
+    backgroundColor: 'red',
+},
   text:{
     color: 'white',
+    fontSize: 20,
   },
   card:{
     height: '2%',
