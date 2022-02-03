@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import Card from '../Components/Character_Card.js'
 import { StyleSheet, Text, View, Button, SafeAreaView, Image } from 'react-native';
+import styles from '../StyleSheet/Edit_Screen.style.js';
 
 export default function EditScreen() {
   return (
@@ -11,14 +10,3 @@ export default function EditScreen() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingTop: '10%',
-  },
-  }
-);
