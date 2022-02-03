@@ -4,7 +4,11 @@ import { StyleSheet, Text, View, Button, SafeAreaView, Image } from 'react-nativ
 
 export default function EditScreen() {
   return (
-    <Text>Blah</Text>
+    <SafeAreaView>
+      <Text>Blah</Text>
+
+
+    </SafeAreaView>
   );
 }
 

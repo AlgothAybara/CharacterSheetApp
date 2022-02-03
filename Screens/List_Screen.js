@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import { useNavigation } from '@react-navigation/native';
 import Card from '../Components/Character_Card.js'
 import { StyleSheet, Text, View, Button, SafeAreaView, Image, FlatList, ScrollView, Pressable } from 'react-native';
 import {  } from 'react-native';
@@ -6,14 +6,17 @@ import {  } from 'react-native';
 character_list = []
 
 export default function ListScreen() {
+  const navigation = useNavigation();
+
   return (
     <SafeAreaView style={styles.container}>
         <ScrollView style={styles.list}>
           <Card screenName="Edit" style={styles.card}/>
         </ScrollView>
         <Pressable
-          onPress={console.log('dog')}style={styles.button}
-          >
+          onPress={() => navigation.navigate('New')}
+          style={styles.button}
+        >
             <Text style={styles.text}>New Character</Text>
           </Pressable>
     </SafeAreaView>
