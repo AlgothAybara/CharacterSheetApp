@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
-export default StyleSheet.create({
+export default StyleSheet.create(
+    {
     container: {
         flex: 1,
         backgroundColor: 'white',
@@ -13,7 +14,7 @@ export default StyleSheet.create({
         borderColor: 'red',
         backgroundColor: 'white',
         width: '90%',
-        justifyContent: 'space-between',
+        justifyContent: 'space-between', 
         alignContent: 'center',
     },
     form_row:{
@@ -64,7 +65,6 @@ export default StyleSheet.create({
     header:{
         borderWidth: 1,
         borderColor: 'blue',
-
         fontSize:30,
         color: 'black',
         textAlign: 'center',
