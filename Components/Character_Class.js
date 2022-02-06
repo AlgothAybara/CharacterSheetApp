@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
 
 class Character extends React.Component {
   state = {}
   
+  // Placeholder custom component - needs more research before it gets incorporated.
   constructor(name, type, attack, defense, body, mind, gold, inventory) {
     this.name = name;
     this.type = type;
