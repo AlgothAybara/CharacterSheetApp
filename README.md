@@ -3,7 +3,7 @@
 I am trying to increase my familiarity with the React Native framework for developing mobile apps. The end goal of this app is to allow users to create and manage characters for a popular boardgame.
 Using the onscreen buttons and forms, users will be able to add, edit, and delete characters.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/SolUYz2uDfE)
 
 # Development Environment
 
