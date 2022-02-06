@@ -13,7 +13,6 @@ Using the onscreen buttons and forms, users will be able to add, edit, and delet
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
 * [React Native](https://reactnative.dev/)
 * [React Navigation](https://reactnavigation.org/)
 * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
