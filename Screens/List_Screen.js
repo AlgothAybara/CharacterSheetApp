@@ -11,9 +11,12 @@ export default function ListScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* May be changed to flatlist - need dynamically called components from list */}
         <ScrollView style={styles.list}>
+          {/* placeholder of a custom component */}
           <Card screenName="Edit" style={styles.card}/>
         </ScrollView>
+        {/* Opens New_Screen when pressed */}
         <Pressable
           onPress={() => navigation.navigate('New')}
           style={styles.button}

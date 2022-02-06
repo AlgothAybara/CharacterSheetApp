@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View, Button, SafeAreaView, Image } from 'react-native';
+import { Text, View, SafeAreaView } from 'react-native';
 
 import styles from '../StyleSheets/Edit_Screen.style.js';
 
 export default function EditScreen() {
   return (
+    // Placeholder screen
     <SafeAreaView>
       <Text>Blah</Text>
 
