@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { StyleSheet, Text, View, Button, SafeAreaView, Image, FlatList, ScrollView, Pressable } from 'react-native';
+import { Text, View, SafeAreaView, FlatList, ScrollView, Pressable } from 'react-native';
 import {  } from 'react-native';
 import Card from '../Components/Character_Card.js'
 import styles from '../StyleSheets/List_Screen.style.js';
