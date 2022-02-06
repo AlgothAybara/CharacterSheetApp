@@ -9,8 +9,8 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    // Setting up navigator to traverse screens
     <NavigationContainer>
-      
       <Stack.Navigator initialRouteName="List">
         <Stack.Screen name="List" component={ListScreen} />
         <Stack.Screen name="Edit" component={EditScreen} />
