@@ -34,7 +34,7 @@ export default StyleSheet.create(
         backgroundColor: 'white',
         borderWidth: 1,
         borderColor: 'red',
-        minHeight: '10%',
+        minHeight: 70,
         minWidth: '95%',
         padding: 10,
         flex: 1,
@@ -54,7 +54,7 @@ export default StyleSheet.create(
     form_btn:{
         borderWidth: 1,
         borderColor: 'blue',
-        minWidth: '40%',
+        minWidth: '30%',
         maxWidth: '60%',
         minHeight: 60,
         margin: 5,
