@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Pressable, SafeAreaView, TextInput } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useState } from 'react';
 import styles from '../StyleSheets/New_Screen.style.js';
 
@@ -20,6 +21,18 @@ class NewScreen extends React.Component{
         };
 
         this.heroChange = this.heroChange.bind(this);
+
+        this.setData = this.setData.bind(this);
+    }
+
+    async setData() {
+        try {
+          const jsonValue = JSON.stringify(this.state)
+          console.log(jsonValue)
+          await AsyncStorage.setItem('@storage_Key', jsonValue)
+        } catch (e) {
+          console.warn(e)
+        }
     }
     
     //allows update of variables
@@ -132,7 +145,7 @@ class NewScreen extends React.Component{
                 <View style={styles.but_row}>
                     {/* unincorporated buttons */}
                     <Pressable
-                        onPress={console.log("save")}
+                        onPress={this.setData}
                         style={styles.foot_btn}
                     >
                         <Text style={styles.text}>Save</Text>
