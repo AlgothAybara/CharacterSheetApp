@@ -27,12 +27,16 @@ class NewScreen extends React.Component{
         this.setData = this.setData.bind(this);
     }
 
+    // Writes data to system storage
     async setData() {
         try {
+            // Sets unique key
             this.state.key = `@${Date.now().toString()}`
             console.log(this.state.key)
+            // Changes format to storable data
             const jsonValue = JSON.stringify(this.state)
             console.log(jsonValue)
+            //Writes data to storage
             await AsyncStorage.setItem(this.state.key, jsonValue)
         } catch (e) {
             console.warn(e)

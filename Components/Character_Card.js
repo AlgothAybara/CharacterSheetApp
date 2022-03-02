@@ -5,7 +5,9 @@ import styles from '../StyleSheets/Character_Card.style.js';
 
 // Custom component to be filled with passed data
 const Card = (props) => {
+    // Sets local variables
     const navigation = useNavigation();
+    // Data obtained from props
     const item = props.item;
     const screenName = props.screenName
   return (

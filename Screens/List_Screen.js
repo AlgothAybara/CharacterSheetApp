@@ -7,8 +7,9 @@ import { useState } from 'react'
 import Card from '../Components/Character_Card.js'
 import styles from '../StyleSheets/List_Screen.style.js';
 
-
+// Uses AsyncStorage to load character data
 async function loadCharacters(setList){
+  //Gets all character data
   try {
     keys = await AsyncStorage.getAllKeys()
     gotten = await AsyncStorage.multiGet(keys)
@@ -16,8 +17,10 @@ async function loadCharacters(setList){
       console.warn(e)
     }
     
+    //Parses the tuple list
     t_list = []
     if (gotten.length > 0) {
+      //Appends data to temp list
       gotten.forEach(got => {
         const jsonValue = got[1]
         temp = jsonValue != null ? JSON.parse(jsonValue) : null
@@ -25,14 +28,17 @@ async function loadCharacters(setList){
         t_list.push(temp)
       });
     } 
+    //Updates the list state
     setList(t_list)
 
 }
 
 export default function ListScreen() {
+  // Special variable that will reload the screen when updated
   const [list, setList] = useState([])
   const navigation = useNavigation();
 
+  //Reloads screen when focused
   React.useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       loadCharacters(setList)
