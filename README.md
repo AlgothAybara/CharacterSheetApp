@@ -1,6 +1,6 @@
 # Overview
 
-I am tdeveloping a multi-platform mobile application using the React Native framework. The end goal of this app is to allow users to create and manage characters for a popular boardgame.
+I am developing a multi-platform mobile application using the React Native framework. The end goal of this app is to allow users to create and manage characters for a popular boardgame.
 Using the onscreen buttons and forms, users will be able to add, edit, and delete characters.
 
 [Software Demo Video](https://youtu.be/SolUYz2uDfE)
