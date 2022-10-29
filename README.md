@@ -1,6 +1,6 @@
 # Overview
 
-I am trying to increase my familiarity with the React Native framework for developing mobile apps. The end goal of this app is to allow users to create and manage characters for a popular boardgame.
+I am tdeveloping a multi-platform mobile application using the React Native framework. The end goal of this app is to allow users to create and manage characters for a popular boardgame.
 Using the onscreen buttons and forms, users will be able to add, edit, and delete characters.
 
 [Software Demo Video](https://youtu.be/SolUYz2uDfE)
@@ -20,6 +20,5 @@ Using the onscreen buttons and forms, users will be able to add, edit, and delet
 
 # Future Work
 
-* Allow data to be saved to local storage
 * Fully incorporate the Edit screen
 * Incorporate custom fonts
