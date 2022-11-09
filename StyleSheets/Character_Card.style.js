@@ -3,26 +3,25 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({  
     container: {
         flex: 1,
-        justifyContent: "space-between",
         alignItems: 'center',
-        justifyContent: 'center',
-        maxHeight: '90%',
+        // justifyContent: 'center',
+        maxHeight: '100%',
         minHeight: '40%',
-        maxWidth: '95%',
+        minWidth: "100%",
         borderColor: 'purple',
         borderWidth: 1,
         backgroundColor: 'pink',
-
+        paddingBottom: "5%",
     },
     card:{
         backgroundColor: 'white',
         borderWidth: 1,
         borderColor: 'red',
-        minHeight: '80%',
+        minHeight: '40%',
+        maxHeight: '100%',
         width: '100%',
-
         flex: 1,
-        justifyContent: "flex-start",
+        justifyContent: "space-between",
         alignItems: 'center',
         justifyContent: 'center',
 
@@ -34,7 +33,8 @@ export default StyleSheet.create({
         borderWidth: 1,
         borderColor: 'red',
         paddingTop: 10,
-        minHeight: '20%',
+        minHeight: '10%',
+        maxHeight: '40%',
         minWidth: '95%',
         paddingBottom: 5,
 
@@ -69,6 +69,7 @@ export default StyleSheet.create({
         textAlign: 'center',
         textAlignVertical: 'center',
         flex: 1,
+        minHeight: "20%"
     },
     subheader:{
         fontSize:20,
@@ -76,6 +77,7 @@ export default StyleSheet.create({
         textAlign: 'center',
         textAlignVertical: 'center',
         flex: 1,
+        minHeight: "20%"
     },
     text:{
         color: 'black',

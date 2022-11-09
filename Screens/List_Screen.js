@@ -60,7 +60,12 @@ export default function ListScreen() {
     <SafeAreaView style={styles.container}>
       {/* May be changed to flatlist - need dynamically called components from list */}
         <FlatList
+          scrollEnabled={true}
+          showsVerticalScrollIndicator={true}
+
           data={list}
+          style={styles.list}
+          contentContainerStyle={styles.listContainer}
           renderItem={({ item }) =>  (
             <Card screenName="Edit" item={item} style={styles.card}/>
           )}
