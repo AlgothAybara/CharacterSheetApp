@@ -2,10 +2,8 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
     container: {
-        flex: 1,
         backgroundColor: '#000',
         alignItems: 'center',
-        justifyContent: 'space-between',
         paddingTop: '2%',
         paddingBottom: '2%',
         minHeight: '100%',
@@ -13,9 +11,15 @@ export default StyleSheet.create({
       },
       list:{
         minHeight: '80%',
+        maxHeight: '90%',
+        maxWidth: '90%',
         borderColor: 'purple',
         borderWidth: 1,
       },
+      // listContainer:{
+      //   justifyContent:"flex-start",
+      //   alignItems:"center"
+      // },
       button:{
         alignItems:'center',
         justifyContent: 'center',

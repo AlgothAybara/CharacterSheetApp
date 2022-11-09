@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Pressable, SafeAreaView, TextInput } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import styles from '../StyleSheets/New_Screen.style.js';
 
@@ -10,6 +11,7 @@ class NewScreen extends React.Component{
     constructor(props) {;
         super(props);
         this.state = {
+            key:"",
             name:"",
             clss:"",
             attk:"", 
@@ -25,13 +27,19 @@ class NewScreen extends React.Component{
         this.setData = this.setData.bind(this);
     }
 
+    // Writes data to system storage
     async setData() {
         try {
-          const jsonValue = JSON.stringify(this.state)
-          console.log(jsonValue)
-          await AsyncStorage.setItem('@storage_Key', jsonValue)
+            // Sets unique key
+            this.state.key = `@${Date.now().toString()}`
+            console.log(this.state.key)
+            // Changes format to storable data
+            const jsonValue = JSON.stringify(this.state)
+            console.log(jsonValue)
+            //Writes data to storage
+            await AsyncStorage.setItem(this.state.key, jsonValue)
         } catch (e) {
-          console.warn(e)
+            console.warn(e)
         }
     }
     
