@@ -162,7 +162,6 @@ export default function EditScreen({ route }) {
                     temp.body = String(parseInt(temp.body) - 1)
                     }
                     setItem(temp)
-                    console.log(temp.body)
                     setAttkText(temp.body)
                   }}
                   title="-"
@@ -189,7 +188,6 @@ export default function EditScreen({ route }) {
                     temp.mind = String(parseInt(temp.mind) - 1)
                     }
                     setItem(temp)
-                    console.log(temp.mind)
                     setAttkText(temp.mind)
                   }}
                   title="-"
