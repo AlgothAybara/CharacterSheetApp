@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../StyleSheets/Edit_Screen.style.js';
 import { useEffect, useState } from 'react'
 import Card from '../Components/Character_Card'
-import UpDown from '../Components/Vertical_UpDown'
+//import UpDown from '../Components/Item_UpDown'
 
 //Deletes Data and returns to list screen
 async function deleteHandle(key, navigation) {
@@ -26,6 +26,18 @@ async function getHandle(key, setItem) {
 
     //sets state hook to parsed data
     setItem(temp)
+}
+
+async function saveHandle(key, item, navigation) {
+  const jsonValue = JSON.stringify(item)
+
+  try {
+    gotten =  await AsyncStorage.setItem(key, jsonValue)
+    } catch(e) {
+      console.warn(e)
+    }
+  
+    navigation.goBack()
 }
 
 //Displays alert on the user screen
@@ -185,27 +197,27 @@ export default function EditScreen({ route }) {
             </View>
         </View>
         <View style={styles.form_row}>
-                        <Text style={styles.label}>Gold</Text>
-                        <TextInput
-                            style={styles.input}
-                            onChangeText={setGold}
-                            placeholder = {item.gold}
-                            keyboardType='numeric'
-                        />
-                    </View>
-                    {/* updates hero inventory */}
-                    <View style={styles.form_row}>
-                        <Text style={styles.subheader}>Inventory</Text>
-                        
-                    </View>
-                    {/* <View style={styles.form_row}>
-                        <TextInput
-                            style={styles.input_ML}
-                            onChangeText={this.heroChange("invt")}
-                            multiline={true}
-                            numberOfLines={10}
-                        />
-                    </View> */}
+            <Text style={styles.label}>Gold</Text>
+            <TextInput
+                style={styles.input}
+                onChangeText={setGold}
+                placeholder = {item.gold}
+                keyboardType='numeric'
+            />
+        </View>
+        {/* updates hero inventory */}
+        <View style={styles.form_row}>
+            <Text style={styles.subheader}>Inventory</Text>
+            <TextInput></TextInput>
+        </View>
+        {/* <View style={styles.form_row}>
+            <TextInput
+                style={styles.input_ML}
+                onChangeText={this.heroChange("invt")}
+                multiline={true}
+                numberOfLines={10}
+            />
+        </View> */}
         <Text>Blah</Text>
         <Pressable
           onPress={() => createTwoButtonAlert(key, navigation)}
@@ -214,6 +226,21 @@ export default function EditScreen({ route }) {
           <Text style={styles.text}>Delete Character</Text>
         </Pressable>
       </ScrollView>
+      <View style={styles.but_row}>
+        {/* unincorporated buttons */}
+        <Pressable
+            onPress={() => {saveHandle(key, item, navigation)}}
+            style={styles.foot_btn}
+        >
+            <Text style={styles.text}>Save</Text>
+        </Pressable>
+        <Pressable
+            onPress={() => {navigation.goBack()}}
+            style={styles.foot_btn}
+        >
+            <Text style={styles.text}>Cancel</Text>
+        </Pressable>
+    </View>
     </SafeAreaView>
   );
 }
