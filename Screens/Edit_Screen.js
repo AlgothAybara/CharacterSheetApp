@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../StyleSheets/Edit_Screen.style.js';
 import { useEffect, useState } from 'react'
 import Card from '../Components/Character_Card'
-import UpDown from '../Components/Item_UpDown'
+import UpDown from '../Components/Vertical_UpDown'
 
 //Deletes Data and returns to list screen
 async function deleteHandle(key, navigation) {
@@ -26,10 +26,6 @@ async function getHandle(key, setItem) {
 
     //sets state hook to parsed data
     setItem(temp)
-    setAttkText(temp.attk)
-    setDefnText(temp.defn)
-    setBodyText(temp.body)
-    setMindText(temp.mind)
 }
 
 //Displays alert on the user screen
@@ -63,6 +59,7 @@ export default function EditScreen({ route }) {
   const [defnText, setDefnText] = useState()
   const [bodyText, setBodyText] = useState()
   const [mindText, setMindText] = useState()
+  const [gold, setGold] = useState()
 
   const navigation = useNavigation();
   const key = route.params.key
@@ -187,6 +184,28 @@ export default function EditScreen({ route }) {
                 />
             </View>
         </View>
+        <View style={styles.form_row}>
+                        <Text style={styles.label}>Gold</Text>
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={setGold}
+                            placeholder = {item.gold}
+                            keyboardType='numeric'
+                        />
+                    </View>
+                    {/* updates hero inventory */}
+                    <View style={styles.form_row}>
+                        <Text style={styles.subheader}>Inventory</Text>
+                        
+                    </View>
+                    {/* <View style={styles.form_row}>
+                        <TextInput
+                            style={styles.input_ML}
+                            onChangeText={this.heroChange("invt")}
+                            multiline={true}
+                            numberOfLines={10}
+                        />
+                    </View> */}
         <Text>Blah</Text>
         <Pressable
           onPress={() => createTwoButtonAlert(key, navigation)}

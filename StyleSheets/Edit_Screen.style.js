@@ -16,5 +16,20 @@ export default StyleSheet.create({
       backgroundColor: 'lightblue',
       color: "black"
     },
+    card:{
+      backgroundColor: 'white',
+      borderWidth: 1,
+      borderColor: 'red',
+      minHeight: '40%',
+      maxHeight: '100%',
+      width: '100%',
+      flex: 1,
+      justifyContent: "space-between",
+      alignItems: 'center',
+      justifyContent: 'center',
+
+      paddingTop: '3%',
+      paddingBottom: '3%',
+  },    
   }
 );

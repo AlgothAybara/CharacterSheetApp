@@ -13,6 +13,7 @@ export default StyleSheet.create({
         minHeight: '80%',
         maxHeight: '90%',
         maxWidth: '90%',
+        minWidth: '60%',
         borderColor: 'purple',
         borderWidth: 1,
       },
