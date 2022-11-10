@@ -14,11 +14,11 @@ class NewScreen extends React.Component{
             key:"",
             name:"",
             clss:"",
-            attk:"", 
-            defn:"", 
-            body:"", 
-            mind:"", 
-            gold:"", 
+            attk:"1", 
+            defn:"2", 
+            body:"0", 
+            mind:"0", 
+            gold:"0", 
             invt:"",
         };
 
@@ -28,7 +28,7 @@ class NewScreen extends React.Component{
     }
 
     // Writes data to system storage
-    async setData() {
+    async setData(navigation) {
         try {
             // Sets unique key
             this.state.key = `@${Date.now().toString()}`
@@ -41,6 +41,7 @@ class NewScreen extends React.Component{
         } catch (e) {
             console.warn(e)
         }
+        navigation.goBack()
     }
     
     //allows update of variables
@@ -57,6 +58,8 @@ class NewScreen extends React.Component{
 
 
     render () {
+        const { navigation } = this.props;
+
         return(
             
             <SafeAreaView style={styles.container}>
@@ -139,27 +142,27 @@ class NewScreen extends React.Component{
                         />
                     </View>
                     {/* unincorporated button to clear all textinputs */}
-                    <View style={styles.form_row}>
+                    {/* <View style={styles.form_row}>
                         <Pressable
                             onPress={console.log('clear')}
                             style={styles.form_btn}
                         >
                             <Text style={styles.text}>Clear Form</Text>
                         </Pressable>
-                    </View>
+                    </View> */}
                     
                 </ScrollView>
                 {/* Screen Footer */}
                 <View style={styles.but_row}>
                     {/* unincorporated buttons */}
                     <Pressable
-                        onPress={this.setData}
+                        onPress={() => {this.setData(navigation)}}
                         style={styles.foot_btn}
                     >
                         <Text style={styles.text}>Save</Text>
                     </Pressable>
                     <Pressable
-                        onPress={console.log("clear")}
+                        onPress={() => {navigation.goBack()}}
                         style={styles.foot_btn}
                     >
                         <Text style={styles.text}>Cancel</Text>
