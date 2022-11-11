@@ -20,7 +20,11 @@ I am developing a multi-platform mobile application using the React Native frame
 
 
 # Future Work
-* Allow data to be saved to local storage (Completed)
-* Fully incorporate the Edit screen
 * Incorporate custom fonts
+* Settings page
+* Numeric UpDowns on List screen cards 
+* Quest book tracker
+* Consumable trackers
+* Light/Dark Modes
+* Dice rolling
 * Consider incorporating character sheets for other games
