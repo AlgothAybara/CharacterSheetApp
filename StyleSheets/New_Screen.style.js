@@ -8,6 +8,7 @@ export default StyleSheet.create(
         alignItems: 'center',
         justifyContent: 'space-between',
         alignContent: 'center',
+        paddingTop: '10%',
     },
     form:{
         borderWidth: 1,

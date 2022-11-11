@@ -8,6 +8,7 @@ export default StyleSheet.create(
         alignItems: 'center',
         justifyContent: 'space-between',
         alignContent: 'center',
+        paddingTop: '10%'
     },
     card:{
         backgroundColor: 'white',
@@ -45,6 +46,7 @@ export default StyleSheet.create(
         backgroundColor: 'white',
         width: '90%',
         justifyContent: 'space-between', 
+        paddingBottom: '10%',
         alignContent: 'center',
     },
     form_row:{
@@ -55,7 +57,6 @@ export default StyleSheet.create(
         minWidth: '95%',
         margin:10,
         flex: 0,
-        
         flexDirection: 'row',
         justifyContent: "space-evenly",
         alignItems: 'center',
