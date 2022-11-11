@@ -82,13 +82,6 @@ class EditScreen extends React.Component {
         navigation.goBack()
     }
 
-    updateRefs(){
-        refList = ["name", "clss", "attk", "defn", "body", "mind", "gold", "invt" ]
-        refList.forEach(ref => {
-            this[ref].va
-        });
-    }
-
     //Displays alert on the user screen
     createTwoButtonAlert(navigation) {
         Alert.alert(
@@ -112,12 +105,15 @@ class EditScreen extends React.Component {
 
     render () {
         const { navigation } = this.props
-        const {item} = this.state 
 
         return (
             // Placeholder screen
-            <SafeAreaView>
-                <ScrollView>
+            <SafeAreaView
+                style={styles.container}
+            >
+                <ScrollView
+                    contentContainerStyle={styles.form}
+                >
                 {/* Name Header */}
                 <TextInput 
                     style={styles.header}
@@ -138,21 +134,24 @@ class EditScreen extends React.Component {
                     {/* Attack UpDown */}
                     <View style={styles.box}>
                         <Text>Attack</Text>
-                        <Button
+                        <Pressable
+                            style={styles.updown_btn}
                             onPress={() => {
                                 temp = this.state
                                 temp.attk = String(parseInt(temp.attk) + 1)
                                 this.state.attk = temp.attk
                                 this.forceUpdate()
                             }}
-                            title="+"
-                        />
+                        >
+                            <Text>+</Text>
+                        </Pressable>
                         <TextInput
                             keyboardType='numeric'
                         >
                             {this.state.attk}
                         </TextInput>
-                        <Button
+                        <Pressable
+                            style={styles.updown_btn}
                             onPress={
                                 () => {
                                     if(this.state.attk > 1){
@@ -164,28 +163,32 @@ class EditScreen extends React.Component {
 
                                 }
                             }
-                            title="-"
-                        />
+                            >
+                            <Text>-</Text>
+                        </Pressable>
         
                     </View>
                     {/* Defense UpDown */}
                     <View style={styles.box}>
                         <Text>Defense</Text>
-                        <Button
+                        <Pressable
+                            style={styles.updown_btn}   
                             onPress={() => {
                                 temp = this.state
                                 temp.defn = String(parseInt(temp.defn) + 1)
                                 this.state.defn = temp.defn
                                 this.forceUpdate()
                             }}
-                            title="+"
-                        />
+                            >
+                            <Text>+</Text>
+                        </Pressable>
                         <TextInput
                             keyboardType='numeric'
                         >
                             {this.state.defn}
                         </TextInput>
-                        <Button
+                        <Pressable
+                            style={styles.updown_btn}
                             onPress={
                                 () => {
                                     if(this.state.defn > 2){
@@ -196,27 +199,31 @@ class EditScreen extends React.Component {
                                     }
                                 }
                             }
-                            title="-"
-                        />
+                            >
+                            <Text>-</Text>
+                        </Pressable>
                     </View>
                     {/* Body UpDown */}
                     <View style={styles.box}>
                         <Text>Body</Text>
-                        <Button
+                        <Pressable
+                            style={styles.updown_btn}
                             onPress={() => {
                                 temp = this.state
                                 temp.body = String(parseInt(temp.body) + 1)
                                 this.state.body = temp.body
                                 this.forceUpdate()
                             }}
-                            title="+"
-                        />
+                            >
+                            <Text>+</Text>
+                        </Pressable>
                         <TextInput
                             keyboardType='numeric'
                         >
                             {this.state.body}
                         </TextInput>
-                        <Button
+                        <Pressable
+                            style={styles.updown_btn}
                             onPress={
                                 () => {
                                     if(this.state.body > 0){
@@ -227,27 +234,31 @@ class EditScreen extends React.Component {
                                     }
                                 }
                             }
-                            title="-"
-                        />
+                            >
+                            <Text>-</Text>
+                        </Pressable>
                     </View>
                     {/* Mind UpDown */}
                     <View style={styles.box}>
                         <Text>Mind</Text>
-                        <Button
+                        <Pressable
+                            style={styles.updown_btn}
                             onPress={() => {
                                 temp = this.state
                                 temp.mind = String(parseInt(temp.mind) + 1)
                                 this.state.mind = temp.mind
                                 this.forceUpdate()
                             }}
-                            title="+"
-                        />
+                            >
+                            <Text>+</Text>
+                        </Pressable>
                         <TextInput
                             keyboardType='numeric'
                         >
                             {this.state.mind}
                         </TextInput>
-                        <Button
+                        <Pressable
+                            style={styles.updown_btn}
                             onPress={
                                 () => {
                                     if(this.state.mind > 0){
@@ -259,8 +270,9 @@ class EditScreen extends React.Component {
                                     }
                                 }
                             }
-                            title="-"
-                        />
+                            >
+                            <Text>-</Text>
+                        </Pressable>
                     </View>
                 </View>
                 {/* Gold Row */}
@@ -291,21 +303,24 @@ class EditScreen extends React.Component {
                     </TextInput>
 
                 </View>
-                <Pressable
-                    onPress={() => this.createTwoButtonAlert(navigation)}
-                    style={styles.button}
+                <View
+                    style={styles.form_row}
                 >
-                    <Text style={styles.text}>Delete Character</Text>
-                </Pressable>
-                <Pressable
-                    onPress={() => this.loadData(this.state.key)}
-                    style={styles.button}
-                >
-                    <Text style={styles.text}>Reset Form</Text>
-                </Pressable>
-                </ScrollView>
-                <View style={styles.but_row}>
-                {/* unincorporated buttons */}
+                    <Pressable
+                        onPress={() => this.createTwoButtonAlert(navigation)}
+                        style={styles.form_btn}
+                    >
+                        <Text style={styles.text}>Delete Character</Text>
+                    </Pressable>
+                    <Pressable
+                        onPress={() => this.loadData(this.state.key)}
+                        style={styles.form_btn}
+                    >
+                        <Text style={styles.text}>Reset Form</Text>
+                    </Pressable>
+                </View>
+            </ScrollView>
+            <View style={styles.but_row}>
                 <Pressable
                     onPress={() => {this.setData(navigation)}}
                     style={styles.foot_btn}
