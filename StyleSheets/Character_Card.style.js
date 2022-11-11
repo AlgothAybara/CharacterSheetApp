@@ -49,7 +49,7 @@ export default StyleSheet.create({
         borderColor: 'blue',
         minHeight: '90%',
         maxWidth: '20%',
-
+        paddingBottom: '1%',
         flex:1,
         alignItems:'center',
     },
