@@ -9,26 +9,40 @@ const UpDown = (props) => {
     const navigation = useNavigation();
     // Data obtained from props
     const item = props.item;
-  return (
+    return (
     
-    <View style={styles.container}>
-        <View style={styles.updown}>
-            <input
-                name='name'
-                placeholder='Item'
-            />
-            <input
-                name='qty'
-                placeholder='0'
-            />
+        <View style={styles.box}>
+            <Text>Attack</Text>
             <Button
-                onPress={}
-                >
+                onPress={() => {
+                    temp = this.state
+                    temp.attk = String(parseInt(temp.attk) + 1)
+                    this.state.attk = temp.attk
+                    this.forceUpdate()
+                }}
+                title="+"
+            />
+            <TextInput
+                keyboardType='numeric'
+            >
+                {this.state.attk}
+            </TextInput>
+            <Button
+                onPress={
+                    () => {
+                        if(this.state.attk > 1){
+                            temp = this.state
+                            temp.attk = String(parseInt(temp.attk) - 1)
+                            this.state.attk = temp.attk
+                            this.forceUpdate()
+                        }
 
-            </Button>
+                    }
+                }
+                title="-"
+            />
         </View>
-    </View>
-  );
+    )
 }
 
 export default UpDown;
