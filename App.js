@@ -11,10 +11,22 @@ export default function App() {
   return (
     // Setting up navigator to traverse screens
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="List">
-        <Stack.Screen name="List" component={ListScreen} />
-        <Stack.Screen name="Edit" component={EditScreen} />
-        <Stack.Screen name="New" component={NewScreen} />
+      <Stack.Navigator 
+        initialRouteName="List"
+        screenOptions={{headerShown: false}}
+      >
+        <Stack.Screen 
+          name="List" 
+          component={ListScreen} 
+        />
+        <Stack.Screen 
+          name="Edit" 
+          component={EditScreen} 
+        />
+        <Stack.Screen 
+          name="New" 
+          component={NewScreen} 
+        />
       </Stack.Navigator>
     
     </NavigationContainer>
