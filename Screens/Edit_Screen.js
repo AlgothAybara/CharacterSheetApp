@@ -1,7 +1,7 @@
 import { Text, Pressable, SafeAreaView, View, Alert, ScrollView, TextInput, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import styles from '../StyleSheets/New_Screen.style.js';
+import styles from '../StyleSheets/Edit_Screen.style.js';
 import React, { useState } from 'react';
 
 
