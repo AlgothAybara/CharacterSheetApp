@@ -21,7 +21,6 @@ class EditScreen extends React.Component {
             invt: "",
         };
         
-        this.textInput = React.createRef();
         this.heroChange = this.heroChange.bind(this);
         this.setData = this.setData.bind(this);
     }
@@ -115,19 +114,19 @@ class EditScreen extends React.Component {
                     contentContainerStyle={styles.form}
                 >
                 {/* Name Header */}
-                <TextInput 
+                <Text 
                     style={styles.header}
                     onChangeText={this.heroChange("name")}
                 >
                     {this.state.name}
-                </TextInput>
+                </Text>
                 {/* Class SubHeader */}
-                <TextInput 
+                <Text 
                     style={styles.subheader}
                     onChangeText={this.heroChange("clss")}
                 >
                     {this.state.clss}
-                </TextInput>
+                </Text>
             
                 {/* UpDown Row */}
                 <View style={styles.row}>
@@ -145,11 +144,11 @@ class EditScreen extends React.Component {
                         >
                             <Text>+</Text>
                         </Pressable>
-                        <TextInput
+                        <Text
                             keyboardType='numeric'
                         >
                             {this.state.attk}
-                        </TextInput>
+                        </Text>
                         <Pressable
                             style={styles.updown_btn}
                             onPress={
@@ -182,11 +181,11 @@ class EditScreen extends React.Component {
                             >
                             <Text>+</Text>
                         </Pressable>
-                        <TextInput
+                        <Text
                             keyboardType='numeric'
                         >
                             {this.state.defn}
-                        </TextInput>
+                        </Text>
                         <Pressable
                             style={styles.updown_btn}
                             onPress={
@@ -217,11 +216,11 @@ class EditScreen extends React.Component {
                             >
                             <Text>+</Text>
                         </Pressable>
-                        <TextInput
+                        <Text
                             keyboardType='numeric'
                         >
                             {this.state.body}
-                        </TextInput>
+                        </Text>
                         <Pressable
                             style={styles.updown_btn}
                             onPress={
@@ -252,11 +251,11 @@ class EditScreen extends React.Component {
                             >
                             <Text>+</Text>
                         </Pressable>
-                        <TextInput
+                        <Text
                             keyboardType='numeric'
                         >
                             {this.state.mind}
-                        </TextInput>
+                        </Text>
                         <Pressable
                             style={styles.updown_btn}
                             onPress={
@@ -287,22 +286,19 @@ class EditScreen extends React.Component {
                     </TextInput>
                 </View>
                 {/* Inventory Row */}
-                <View style={styles.form_row}>
-                    <Text style={styles.subheader}>Inventory</Text>
-                    <TextInput
-                    ></TextInput>
-                </View>
-                <View style={styles.form_row}>
-                    <TextInput
-                        style={styles.input_ML}
-                        onChangeText={this.heroChange("invt")}
-                        multiline={true}
-                        numberOfLines={10}
-                    >
-                        {this.state.invt}
-                    </TextInput>
+                <Text style={styles.subheader}>Inventory</Text>
 
+                <View style={styles.form_row}>
+                      <TextInput
+                          style={styles.input_ML}
+                          onChangeText={this.heroChange("invt")}
+                          multiline={true}
+                          numberOfLines={10}
+                      >
+                          {this.state.invt}
+                      </TextInput>
                 </View>
+
                 <View
                     style={styles.form_row}
                 >
