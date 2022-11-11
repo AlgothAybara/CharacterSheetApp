@@ -98,7 +98,7 @@ class EditScreen extends React.Component {
                 //Cancels deletion
                 {
                     text: "No",
-                    onPress: () => console.log("Cancel Pressed"),
+                    //onPress: () => console.log("Cancel Pressed"),
                     style: "cancel"
                 },
                 //Deletes data
@@ -255,7 +255,7 @@ class EditScreen extends React.Component {
                                         temp.mind = String(parseInt(temp.mind) - 1)
                                         this.state.mind = temp.mind
                                         this.forceUpdate()
-                                        console.log(this.state)
+                                        //console.log(this.state)
                                     }
                                 }
                             }
