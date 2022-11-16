@@ -13,7 +13,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator 
         initialRouteName="List"
-        screenOptions={{headerShown: false}}
+        // screenOptions={{headerShown: false}}
       >
         <Stack.Screen 
           name="List" 
