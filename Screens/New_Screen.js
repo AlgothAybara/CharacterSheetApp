@@ -20,6 +20,8 @@ class NewScreen extends React.Component{
             mind:"0", 
             gold:"0", 
             invt:"",
+            qnme:"",
+            qcnt:"0",
         };
 
         this.heroChange = this.heroChange.bind(this);
@@ -141,6 +143,27 @@ class NewScreen extends React.Component{
                             numberOfLines={10}
                         />
                     </View>
+                    <View style={styles.form_row}>
+                        <Text style={styles.subheader}>Campaign Progress</Text>
+                        
+                    </View>                    
+                    <View style={styles.form_row}>
+                        <Text style={styles.label}>Campaign Name</Text>
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={this.heroChange("qnme")}
+                        />
+                    </View>
+                    {/* updates hero defense */}
+                    <View style={styles.form_row}>
+                        <Text style={styles.label}>Completed Quests</Text>
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={this.heroChange("qcnt")}
+                            keyboardType='numeric'
+                        />
+                    </View>
+
                     {/* unincorporated button to clear all textinputs */}
                     {/* <View style={styles.form_row}>
                         <Pressable

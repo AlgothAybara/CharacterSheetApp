@@ -19,6 +19,8 @@ class EditScreen extends React.Component {
             mind: "",
             gold: "",
             invt: "",
+            qnme: "",
+            qcnt: "",
         };
         
         this.heroChange = this.heroChange.bind(this);
@@ -64,6 +66,8 @@ class EditScreen extends React.Component {
         this.state.mind = temp.mind
         this.state.gold = temp.gold
         this.state.invt = temp.invt
+        this.state.qnme = temp.qnme
+        this.state.qcnt = temp.qcnt
 
         // console.log(this.state)
         this.forceUpdate()
@@ -114,25 +118,24 @@ class EditScreen extends React.Component {
                     contentContainerStyle={styles.form}
                 >
                 {/* Name Header */}
-                <Text 
+                <TextInput 
                     style={styles.header}
                     onChangeText={this.heroChange("name")}
                 >
                     {this.state.name}
-                </Text>
+                </TextInput>
                 {/* Class SubHeader */}
-                <Text 
+                <TextInput
                     style={styles.subheader}
                     onChangeText={this.heroChange("clss")}
                 >
                     {this.state.clss}
-                </Text>
+                </TextInput>
             
                 {/* UpDown Row */}
                 <View style={styles.row}>
                     {/* Attack UpDown */}
                     <View style={styles.box}>
-                        <Text>Attack</Text>
                         <Pressable
                             style={styles.updown_btn}
                             onPress={() => {
@@ -144,9 +147,8 @@ class EditScreen extends React.Component {
                         >
                             <Text>+</Text>
                         </Pressable>
-                        <Text
-                            keyboardType='numeric'
-                        >
+                        <Text>Attack</Text>
+                        <Text>
                             {this.state.attk}
                         </Text>
                         <Pressable
@@ -169,7 +171,6 @@ class EditScreen extends React.Component {
                     </View>
                     {/* Defense UpDown */}
                     <View style={styles.box}>
-                        <Text>Defense</Text>
                         <Pressable
                             style={styles.updown_btn}   
                             onPress={() => {
@@ -181,9 +182,8 @@ class EditScreen extends React.Component {
                             >
                             <Text>+</Text>
                         </Pressable>
-                        <Text
-                            keyboardType='numeric'
-                        >
+                        <Text>Defense</Text>
+                        <Text>
                             {this.state.defn}
                         </Text>
                         <Pressable
@@ -204,7 +204,7 @@ class EditScreen extends React.Component {
                     </View>
                     {/* Body UpDown */}
                     <View style={styles.box}>
-                        <Text>Body</Text>
+                        
                         <Pressable
                             style={styles.updown_btn}
                             onPress={() => {
@@ -216,9 +216,8 @@ class EditScreen extends React.Component {
                             >
                             <Text>+</Text>
                         </Pressable>
-                        <Text
-                            keyboardType='numeric'
-                        >
+                        <Text>Body</Text>
+                        <Text>
                             {this.state.body}
                         </Text>
                         <Pressable
@@ -239,7 +238,7 @@ class EditScreen extends React.Component {
                     </View>
                     {/* Mind UpDown */}
                     <View style={styles.box}>
-                        <Text>Mind</Text>
+                        
                         <Pressable
                             style={styles.updown_btn}
                             onPress={() => {
@@ -251,9 +250,8 @@ class EditScreen extends React.Component {
                             >
                             <Text>+</Text>
                         </Pressable>
-                        <Text
-                            keyboardType='numeric'
-                        >
+                        <Text>Mind</Text>
+                        <Text>
                             {this.state.mind}
                         </Text>
                         <Pressable
@@ -297,6 +295,52 @@ class EditScreen extends React.Component {
                       >
                           {this.state.invt}
                       </TextInput>
+                </View>
+
+                {/* Campaign Row */}
+                <View style={styles.form_row}>
+                    <TextInput
+                        style={styles.subheader}
+                        onChangeText={this.heroChange("qnme")}
+                    >
+                        {this.state.qnme}
+                    </TextInput>
+                </View>
+                <View
+                    style={styles.form_row}
+                >
+                    <Text style={styles.label}>Completed Quests:</Text>
+
+                    <Pressable
+                        // style={styles.updown_btn}
+                        onPress={() => {
+                            temp = this.state
+                            temp.qcnt = String(parseInt(temp.qcnt) + 1)
+                            this.state.qcnt = temp.qcnt
+                            this.forceUpdate()
+                        }}
+                    >
+                        <Text>+</Text>
+                    </Pressable>
+                    <Text style={styles.input}>
+                        {this.state.qcnt}
+                    </Text>
+                    <Pressable
+                        // style={styles.updown_btn}
+                        onPress={
+                            () => {
+                                if(this.state.qcnt > 1){
+                                    temp = this.state
+                                    temp.qcnt = String(parseInt(temp.qcnt) - 1)
+                                    this.state.qcnt = temp.qcnt
+                                    this.forceUpdate()
+                                }
+
+                            }
+                        }
+                        >
+                        <Text>-</Text>
+                    </Pressable>
                 </View>
 
                 <View
