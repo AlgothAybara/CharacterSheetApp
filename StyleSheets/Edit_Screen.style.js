@@ -82,6 +82,7 @@ export default StyleSheet.create(
         flex:1,
         alignItems:'center',
         paddingBottom: '1%',
+        paddingTop: '1%',
     },
     foot_btn:{
         borderWidth: 1,
