@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import styles from '../StyleSheets/New_Screen.style.js';
+import gen_styles from '../StyleSheets/General.style.js';
 
 
 class NewScreen extends React.Component{
@@ -65,130 +66,130 @@ class NewScreen extends React.Component{
         return(
             
             <SafeAreaView style={styles.container}>
-                <Text style={styles.header}>Create a Hero</Text>
+                <Text style={gen_styles.header}>Create a Hero</Text>
                 {/* beginning of form to instantiate character stats */}
-                <ScrollView contentContainerStyle={styles.form}>
+                <ScrollView contentContainerStyle={gen_styles.form}>
                     {/* updates character name */}
-                    <View style={styles.form_row}>
-                        <Text style={styles.label}>Hero Name</Text>
+                    <View style={gen_styles.form_row}>
+                        <Text style={gen_styles.label}>Hero Name</Text>
                         <TextInput
-                            style={styles.input}
+                            style={gen_styles.input}
                             onChangeText={this.heroChange("name")}
                         />
                     </View>
                     {/* updates hero class */}
-                    <View style={styles.form_row}>
-                        <Text style={styles.label}>Hero Class</Text>
+                    <View style={gen_styles.form_row}>
+                        <Text style={gen_styles.label}>Hero Class</Text>
                         <TextInput
-                            style={styles.input}
+                            style={gen_styles.input}
                             onChangeText={this.heroChange("clss")}
                         />
                     </View>
                     {/* updates hero attack */}
-                    <View style={styles.form_row}>
-                        <Text style={styles.label}>Attack</Text>
+                    <View style={gen_styles.form_row}>
+                        <Text style={gen_styles.label}>Attack</Text>
                         <TextInput
-                            style={styles.input}
+                            style={gen_styles.input}
                             onChangeText={this.heroChange("attk")}
                             keyboardType='numeric'
                         />
                     </View>
                     {/* updates hero defense */}
-                    <View style={styles.form_row}>
-                        <Text style={styles.label}>Defense</Text>
+                    <View style={gen_styles.form_row}>
+                        <Text style={gen_styles.label}>Defense</Text>
                         <TextInput
-                            style={styles.input}
+                            style={gen_styles.input}
                             onChangeText={this.heroChange("defn")}
                             keyboardType='numeric'
                         />
                     </View>
                     {/* updates hero body points */}
-                    <View style={styles.form_row}>
-                        <Text style={styles.label}>Body Points</Text>
+                    <View style={gen_styles.form_row}>
+                        <Text style={gen_styles.label}>Body Points</Text>
                         <TextInput
-                            style={styles.input}
+                            style={gen_styles.input}
                             onChangeText={this.heroChange("body")}
                             keyboardType='numeric'
                         />
                     </View>
                     {/* updated hero mind points */}
-                    <View style={styles.form_row}>
-                        <Text style={styles.label}>Mind Points</Text>
+                    <View style={gen_styles.form_row}>
+                        <Text style={gen_styles.label}>Mind Points</Text>
                         <TextInput
-                            style={styles.input}
+                            style={gen_styles.input}
                             onChangeText={this.heroChange("mind")}
                             keyboardType='numeric'
 
                         />
                     </View>
                     {/* updates hero gold */}
-                    <View style={styles.form_row}>
-                        <Text style={styles.label}>Gold</Text>
+                    <View style={gen_styles.form_row}>
+                        <Text style={gen_styles.label}>Gold</Text>
                         <TextInput
-                            style={styles.input}
+                            style={gen_styles.input}
                             onChangeText={this.heroChange("gold")}
                             keyboardType='numeric'
                         />
                     </View>
                     {/* updates hero inventory */}
-                    <View style={styles.form_row}>
-                        <Text style={styles.subheader}>Inventory</Text>
+                    <View style={gen_styles.form_row}>
+                        <Text style={gen_styles.subheader}>Inventory</Text>
                         
                     </View>
-                    <View style={styles.form_row}>
+                    <View style={gen_styles.form_row}>
                         <TextInput
-                            style={styles.input_ML}
+                            style={gen_styles.input_ML}
                             onChangeText={this.heroChange("invt")}
                             multiline={true}
                             numberOfLines={10}
                         />
                     </View>
-                    <View style={styles.form_row}>
-                        <Text style={styles.subheader}>Campaign Progress</Text>
+                    <View style={gen_styles.form_row}>
+                        <Text style={gen_styles.subheader}>Campaign Progress</Text>
                         
                     </View>                    
-                    <View style={styles.form_row}>
-                        <Text style={styles.label}>Campaign Name</Text>
+                    <View style={gen_styles.form_row}>
+                        <Text style={gen_styles.label}>Campaign Name</Text>
                         <TextInput
-                            style={styles.input}
+                            style={gen_styles.input}
                             onChangeText={this.heroChange("qnme")}
                         />
                     </View>
                     {/* updates hero defense */}
-                    <View style={styles.form_row}>
-                        <Text style={styles.label}>Completed Quests</Text>
+                    <View style={gen_styles.form_row}>
+                        <Text style={gen_styles.label}>Completed Quests</Text>
                         <TextInput
-                            style={styles.input}
+                            style={gen_styles.input}
                             onChangeText={this.heroChange("qcnt")}
                             keyboardType='numeric'
                         />
                     </View>
 
                     {/* unincorporated button to clear all textinputs */}
-                    {/* <View style={styles.form_row}>
+                    {/* <View style={gen_styles.form_row}>
                         <Pressable
                             onPress={console.log('clear')}
-                            style={styles.form_btn}
+                            style={gen_styles.form_btn}
                         >
-                            <Text style={styles.text}>Clear Form</Text>
+                            <Text style={gen_styles.text}>Clear Form</Text>
                         </Pressable>
                     </View> */}
                     
                 </ScrollView>
                 {/* Screen Footer */}
-                <View style={styles.but_row}>
+                <View style={gen_styles.but_row}>
                     {/* unincorporated buttons */}
                     <Pressable
                         onPress={() => {this.setData(navigation)}}
-                        style={styles.foot_btn}
+                        style={gen_styles.foot_btn}
                     >
-                        <Text style={styles.text}>Save</Text>
+                        <Text style={gen_styles.text}>Save</Text>
                     </Pressable>
                     <Pressable
                         onPress={() => {navigation.goBack()}}
-                        style={styles.foot_btn}
+                        style={gen_styles.foot_btn}
                     >
-                        <Text style={styles.text}>Cancel</Text>
+                        <Text style={gen_styles.text}>Cancel</Text>
                     </Pressable>
                 </View>
             </SafeAreaView>

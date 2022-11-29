@@ -6,6 +6,7 @@ import {   } from 'react-native';
 import { useState } from 'react'
 import Card from '../Components/Character_Card.js'
 import styles from '../StyleSheets/List_Screen.style.js';
+import gen_styles from '../StyleSheets/General.style.js';
 
 // Uses AsyncStorage to load character data
 async function loadCharacters(setList){
@@ -75,7 +76,7 @@ export default function ListScreen() {
           onPress={() => navigation.navigate('New')}
           style={styles.button}
         >
-            <Text style={styles.text}>New Character</Text>
+            <Text style={gen_styles.text}>New Character</Text>
           </Pressable>
     </SafeAreaView>
   );

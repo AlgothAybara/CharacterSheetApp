@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from '../StyleSheets/Item_UpDown.style.js';
+// import styles from '../StyleSheets/General.style.js';
 
 // Custom component to be filled with passed data
 const UpDown = (props) => {

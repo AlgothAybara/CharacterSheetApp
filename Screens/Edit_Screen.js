@@ -3,6 +3,8 @@ import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../StyleSheets/Edit_Screen.style.js';
 import React, { useState } from 'react';
+import gen_styles from '../StyleSheets/General.style.js';
+
 
 
 class EditScreen extends React.Component {
@@ -115,29 +117,29 @@ class EditScreen extends React.Component {
                 style={styles.container}
             >
                 <ScrollView
-                    contentContainerStyle={styles.form}
+                    contentContainerStyle={gen_styles.form}
                 >
                 {/* Name Header */}
                 <TextInput 
-                    style={styles.header}
+                    style={gen_styles.header}
                     onChangeText={this.heroChange("name")}
                 >
                     {this.state.name}
                 </TextInput>
                 {/* Class SubHeader */}
                 <TextInput
-                    style={styles.subheader}
+                    style={gen_styles.subheader}
                     onChangeText={this.heroChange("clss")}
                 >
                     {this.state.clss}
                 </TextInput>
             
                 {/* UpDown Row */}
-                <View style={styles.row}>
+                <View style={gen_styles.row}>
                     {/* Attack UpDown */}
-                    <View style={styles.box}>
+                    <View style={gen_styles.box}>
                         <Pressable
-                            style={styles.updown_btn}
+                            style={gen_styles.updown_btn}
                             onPress={() => {
                                 temp = this.state
                                 temp.attk = String(parseInt(temp.attk) + 1)
@@ -152,7 +154,7 @@ class EditScreen extends React.Component {
                             {this.state.attk}
                         </Text>
                         <Pressable
-                            style={styles.updown_btn}
+                            style={gen_styles.updown_btn}
                             onPress={
                                 () => {
                                     if(this.state.attk > 1){
@@ -170,9 +172,9 @@ class EditScreen extends React.Component {
         
                     </View>
                     {/* Defense UpDown */}
-                    <View style={styles.box}>
+                    <View style={gen_styles.box}>
                         <Pressable
-                            style={styles.updown_btn}   
+                            style={gen_styles.updown_btn}   
                             onPress={() => {
                                 temp = this.state
                                 temp.defn = String(parseInt(temp.defn) + 1)
@@ -187,7 +189,7 @@ class EditScreen extends React.Component {
                             {this.state.defn}
                         </Text>
                         <Pressable
-                            style={styles.updown_btn}
+                            style={gen_styles.updown_btn}
                             onPress={
                                 () => {
                                     if(this.state.defn > 2){
@@ -203,10 +205,10 @@ class EditScreen extends React.Component {
                         </Pressable>
                     </View>
                     {/* Body UpDown */}
-                    <View style={styles.box}>
+                    <View style={gen_styles.box}>
                         
                         <Pressable
-                            style={styles.updown_btn}
+                            style={gen_styles.updown_btn}
                             onPress={() => {
                                 temp = this.state
                                 temp.body = String(parseInt(temp.body) + 1)
@@ -221,7 +223,7 @@ class EditScreen extends React.Component {
                             {this.state.body}
                         </Text>
                         <Pressable
-                            style={styles.updown_btn}
+                            style={gen_styles.updown_btn}
                             onPress={
                                 () => {
                                     if(this.state.body > 0){
@@ -237,10 +239,10 @@ class EditScreen extends React.Component {
                         </Pressable>
                     </View>
                     {/* Mind UpDown */}
-                    <View style={styles.box}>
+                    <View style={gen_styles.box}>
                         
                         <Pressable
-                            style={styles.updown_btn}
+                            style={gen_styles.updown_btn}
                             onPress={() => {
                                 temp = this.state
                                 temp.mind = String(parseInt(temp.mind) + 1)
@@ -255,7 +257,7 @@ class EditScreen extends React.Component {
                             {this.state.mind}
                         </Text>
                         <Pressable
-                            style={styles.updown_btn}
+                            style={gen_styles.updown_btn}
                             onPress={
                                 () => {
                                     if(this.state.mind > 0){
@@ -273,10 +275,10 @@ class EditScreen extends React.Component {
                     </View>
                 </View>
                 {/* Gold Row */}
-                <View style={styles.form_row}>
-                    <Text style={styles.label}>Gold</Text>
+                <View style={gen_styles.form_row}>
+                    <Text style={gen_styles.label}>Gold</Text>
                     <TextInput
-                        style={styles.input}
+                        style={gen_styles.input}
                         onChangeText={this.heroChange("gold")}
                         keyboardType='numeric'
                     >
@@ -284,11 +286,11 @@ class EditScreen extends React.Component {
                     </TextInput>
                 </View>
                 {/* Inventory Row */}
-                <Text style={styles.subheader}>Inventory</Text>
+                <Text style={gen_styles.subheader}>Inventory</Text>
 
-                <View style={styles.form_row}>
+                <View style={gen_styles.form_row}>
                       <TextInput
-                          style={styles.input_ML}
+                          style={gen_styles.input_ML}
                           onChangeText={this.heroChange("invt")}
                           multiline={true}
                           numberOfLines={10}
@@ -298,21 +300,21 @@ class EditScreen extends React.Component {
                 </View>
 
                 {/* Campaign Row */}
-                <View style={styles.form_row}>
+                <View style={gen_styles.form_row}>
                     <TextInput
-                        style={styles.subheader}
+                        style={gen_styles.subheader}
                         onChangeText={this.heroChange("qnme")}
                     >
                         {this.state.qnme}
                     </TextInput>
                 </View>
                 <View
-                    style={styles.form_row}
+                    style={gen_styles.form_row}
                 >
-                    <Text style={styles.label}>Completed Quests:</Text>
+                    <Text style={gen_styles.label}>Completed Quests:</Text>
 
                     <Pressable
-                        // style={styles.updown_btn}
+                        // style={gen_styles.updown_btn}
                         onPress={() => {
                             temp = this.state
                             temp.qcnt = String(parseInt(temp.qcnt) + 1)
@@ -322,11 +324,11 @@ class EditScreen extends React.Component {
                     >
                         <Text>+</Text>
                     </Pressable>
-                    <Text style={styles.input}>
+                    <Text style={gen_styles.input}>
                         {this.state.qcnt}
                     </Text>
                     <Pressable
-                        // style={styles.updown_btn}
+                        // style={gen_styles.updown_btn}
                         onPress={
                             () => {
                                 if(this.state.qcnt > 1){
@@ -344,34 +346,34 @@ class EditScreen extends React.Component {
                 </View>
 
                 <View
-                    style={styles.form_row}
+                    style={gen_styles.form_row}
                 >
                     <Pressable
                         onPress={() => this.createTwoButtonAlert(navigation)}
-                        style={styles.form_btn}
+                        style={gen_styles.form_btn}
                     >
-                        <Text style={styles.text}>Delete Character</Text>
+                        <Text style={gen_styles.text}>Delete Character</Text>
                     </Pressable>
                     <Pressable
                         onPress={() => this.loadData(this.state.key)}
-                        style={styles.form_btn}
+                        style={gen_styles.form_btn}
                     >
-                        <Text style={styles.text}>Reset Form</Text>
+                        <Text style={gen_styles.text}>Reset Form</Text>
                     </Pressable>
                 </View>
             </ScrollView>
-            <View style={styles.but_row}>
+            <View style={gen_styles.but_row}>
                 <Pressable
                     onPress={() => {this.setData(navigation)}}
-                    style={styles.foot_btn}
+                    style={gen_styles.foot_btn}
                 >
-                    <Text style={styles.text}>Save</Text>
+                    <Text style={gen_styles.text}>Save</Text>
                 </Pressable>
                 <Pressable
                     onPress={() => {navigation.goBack()}}
-                    style={styles.foot_btn}
+                    style={gen_styles.foot_btn}
                 >
-                    <Text style={styles.text}>Cancel</Text>
+                    <Text style={gen_styles.text}>Cancel</Text>
                 </Pressable>
             </View>
             </SafeAreaView>

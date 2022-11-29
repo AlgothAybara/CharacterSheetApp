@@ -4,7 +4,6 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        // justifyContent: 'center',
         maxHeight: '100%',
         minHeight: '40%',
         minWidth: "100%",
@@ -28,31 +27,6 @@ export default StyleSheet.create({
         paddingTop: '3%',
         paddingBottom: '3%',
     },    
-    row:{
-        backgroundColor: 'white',
-        borderWidth: 1,
-        borderColor: 'red',
-        paddingTop: 10,
-        minHeight: '10%',
-        maxHeight: '40%',
-        minWidth: '95%',
-        paddingBottom: 5,
-
-        flex: 10,
-        flexDirection: 'row',
-        justifyContent: "space-around",
-        alignItems: 'center',
-    },
-    box:{
-        backgroundColor: 'yellow',
-        borderWidth: 1,
-        borderColor: 'blue',
-        minHeight: '90%',
-        maxWidth: '20%',
-        paddingBottom: '1%',
-        flex:1,
-        alignItems:'center',
-    },
     button:{
         flex:4,
         alignItems:'center',
@@ -63,26 +37,5 @@ export default StyleSheet.create({
         margin: 1,
         padding: 5,
     },
-    header:{
-        fontSize:30,
-        color: 'black',
-        textAlign: 'center',
-        textAlignVertical: 'center',
-        flex: 1,
-        minHeight: "20%"
-    },
-    subheader:{
-        fontSize:20,
-        color: 'black',
-        textAlign: 'center',
-        textAlignVertical: 'center',
-        flex: 1,
-        minHeight: "20%"
-    },
-    text:{
-        color: 'black',
-        textAlign: 'center',
-        textAlignVertical: 'center',
-      },
   }
 );

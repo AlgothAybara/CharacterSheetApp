@@ -18,10 +18,6 @@ export default StyleSheet.create({
         borderColor: 'purple',
         borderWidth: 1,
       },
-      // listContainer:{
-      //   justifyContent:"flex-start",
-      //   alignItems:"center"
-      // },
       button:{
         alignItems:'center',
         justifyContent: 'center',
@@ -29,11 +25,4 @@ export default StyleSheet.create({
         width: '100%',
         backgroundColor: 'red',
     },
-      text:{
-        color: 'white',
-        fontSize: 20,
-      },
-      card:{
-        height: '2%',
-      },    
 });
