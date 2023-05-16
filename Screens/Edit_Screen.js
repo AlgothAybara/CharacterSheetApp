@@ -345,15 +345,19 @@ class EditScreen extends React.Component {
                     <Pressable
                         style={gen_styles.hor_updown_btn}
                         onPress={() => {
-                            temp = this.state
-                            temp.qcnt = String(parseInt(temp.qcnt) + 1)
-                            this.state.qcnt = temp.qcnt
-                            this.forceUpdate()
+                            if(this.state.qcnt > 0){
+                                temp = this.state
+                                temp.qcnt = String(parseInt(temp.qcnt) - 1)
+                                this.state.qcnt = temp.qcnt
+                                this.forceUpdate()
+                            }
                         }}
-                    >
+                        >
                         <Text
                             style={gen_styles.box_btn_txt}
-                        >+</Text>
+                        >
+                            -
+                        </Text>
                     </Pressable>
                     <TextInput
                         style={gen_styles.input}
@@ -369,19 +373,18 @@ class EditScreen extends React.Component {
                     </TextInput>
                     <Pressable
                         style={gen_styles.hor_updown_btn}
-                        onPress={
-                            () => {
-                                if(this.state.qcnt > 0){
-                                    temp = this.state
-                                    temp.qcnt = String(parseInt(temp.qcnt) - 1)
-                                    this.state.qcnt = temp.qcnt
-                                    this.forceUpdate()
-                                }
-
-                            }
-                        }
+                        onPress={() => {
+                            temp = this.state
+                            temp.qcnt = String(parseInt(temp.qcnt) + 1)
+                            this.state.qcnt = temp.qcnt
+                            this.forceUpdate()
+                        }}
+                    >
+                        <Text
+                            style={gen_styles.box_btn_txt}
                         >
-                        <Text>-</Text>
+                            +
+                        </Text>
                     </Pressable>
                 </View>
 
