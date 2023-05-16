@@ -70,7 +70,7 @@ class NewScreen extends React.Component{
                 {/* beginning of form to instantiate character stats */}
                 <ScrollView contentContainerStyle={gen_styles.form}>
                     {/* updates character name */}
-                    <View style={gen_styles.form_row}>
+                    <View style={gen_styles.center_form_row}>
                         <Text style={gen_styles.label}>Hero Name</Text>
                         <TextInput
                             style={gen_styles.input}
@@ -78,7 +78,7 @@ class NewScreen extends React.Component{
                         />
                     </View>
                     {/* updates hero class */}
-                    <View style={gen_styles.form_row}>
+                    <View style={gen_styles.center_form_row}>
                         <Text style={gen_styles.label}>Hero Class</Text>
                         <TextInput
                             style={gen_styles.input}
@@ -86,7 +86,7 @@ class NewScreen extends React.Component{
                         />
                     </View>
                     {/* updates hero attack */}
-                    <View style={gen_styles.form_row}>
+                    <View style={gen_styles.center_form_row}>
                         <Text style={gen_styles.label}>Attack</Text>
                         <TextInput
                             style={gen_styles.input}
@@ -95,7 +95,7 @@ class NewScreen extends React.Component{
                         />
                     </View>
                     {/* updates hero defense */}
-                    <View style={gen_styles.form_row}>
+                    <View style={gen_styles.center_form_row}>
                         <Text style={gen_styles.label}>Defense</Text>
                         <TextInput
                             style={gen_styles.input}
@@ -104,7 +104,7 @@ class NewScreen extends React.Component{
                         />
                     </View>
                     {/* updates hero body points */}
-                    <View style={gen_styles.form_row}>
+                    <View style={gen_styles.center_form_row}>
                         <Text style={gen_styles.label}>Body Points</Text>
                         <TextInput
                             style={gen_styles.input}
@@ -113,7 +113,7 @@ class NewScreen extends React.Component{
                         />
                     </View>
                     {/* updated hero mind points */}
-                    <View style={gen_styles.form_row}>
+                    <View style={gen_styles.center_form_row}>
                         <Text style={gen_styles.label}>Mind Points</Text>
                         <TextInput
                             style={gen_styles.input}
@@ -123,7 +123,7 @@ class NewScreen extends React.Component{
                         />
                     </View>
                     {/* updates hero gold */}
-                    <View style={gen_styles.form_row}>
+                    <View style={gen_styles.center_form_row}>
                         <Text style={gen_styles.label}>Gold</Text>
                         <TextInput
                             style={gen_styles.input}
@@ -132,11 +132,11 @@ class NewScreen extends React.Component{
                         />
                     </View>
                     {/* updates hero inventory */}
-                    <View style={gen_styles.form_row}>
+                    <View style={gen_styles.center_form_row}>
                         <Text style={gen_styles.subheader}>Inventory</Text>
                         
                     </View>
-                    <View style={gen_styles.form_row}>
+                    <View style={gen_styles.center_form_row}>
                         <TextInput
                             style={gen_styles.input_ML}
                             onChangeText={this.heroChange("invt")}
@@ -144,11 +144,11 @@ class NewScreen extends React.Component{
                             numberOfLines={10}
                         />
                     </View>
-                    <View style={gen_styles.form_row}>
+                    <View style={gen_styles.center_form_row}>
                         <Text style={gen_styles.subheader}>Campaign Progress</Text>
                         
                     </View>                    
-                    <View style={gen_styles.form_row}>
+                    <View style={gen_styles.center_form_row}>
                         <Text style={gen_styles.label}>Campaign Name</Text>
                         <TextInput
                             style={gen_styles.input}
@@ -156,7 +156,7 @@ class NewScreen extends React.Component{
                         />
                     </View>
                     {/* updates hero defense */}
-                    <View style={gen_styles.form_row}>
+                    <View style={gen_styles.center_form_row}>
                         <Text style={gen_styles.label}>Completed Quests</Text>
                         <TextInput
                             style={gen_styles.input}
@@ -166,7 +166,7 @@ class NewScreen extends React.Component{
                     </View>
 
                     {/* unincorporated button to clear all textinputs */}
-                    {/* <View style={gen_styles.form_row}>
+                    {/* <View style={gen_styles.center_form_row}>
                         <Pressable
                             onPress={console.log('clear')}
                             style={gen_styles.form_btn}

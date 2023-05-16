@@ -121,7 +121,7 @@ class EditScreen extends React.Component {
                 >
                 {/* Name Header */}
                 <TextInput 
-                    style={gen_styles.header}
+                    style={[gen_styles.header, styles.header_width]}
                     onChangeText={this.heroChange("name")}
                 >
                     {this.state.name}
@@ -147,10 +147,14 @@ class EditScreen extends React.Component {
                                 this.forceUpdate()
                             }}
                         >
-                            <Text>+</Text>
+                            <Text
+                                style={gen_styles.box_btn_txt}
+                            >+</Text>
                         </Pressable>
                         <Text>Attack</Text>
-                        <Text>
+                        <Text
+                            style={gen_styles.box_vlu_txt}
+                        >
                             {this.state.attk}
                         </Text>
                         <Pressable
@@ -167,7 +171,9 @@ class EditScreen extends React.Component {
                                 }
                             }
                             >
-                            <Text>-</Text>
+                            <Text
+                                style={gen_styles.box_btn_txt}
+                            >-</Text>
                         </Pressable>
         
                     </View>
@@ -182,10 +188,14 @@ class EditScreen extends React.Component {
                                 this.forceUpdate()
                             }}
                             >
-                            <Text>+</Text>
+                            <Text
+                                style={gen_styles.box_btn_txt}
+                            >+</Text>
                         </Pressable>
                         <Text>Defense</Text>
-                        <Text>
+                        <Text
+                            style={gen_styles.box_vlu_txt}
+                        >
                             {this.state.defn}
                         </Text>
                         <Pressable
@@ -201,7 +211,9 @@ class EditScreen extends React.Component {
                                 }
                             }
                             >
-                            <Text>-</Text>
+                            <Text
+                                style={gen_styles.box_btn_txt}
+                            >-</Text>
                         </Pressable>
                     </View>
                     {/* Body UpDown */}
@@ -216,10 +228,14 @@ class EditScreen extends React.Component {
                                 this.forceUpdate()
                             }}
                             >
-                            <Text>+</Text>
+                            <Text
+                                style={gen_styles.box_btn_txt}
+                            >+</Text>
                         </Pressable>
                         <Text>Body</Text>
-                        <Text>
+                        <Text
+                            style={gen_styles.box_vlu_txt}
+                        >
                             {this.state.body}
                         </Text>
                         <Pressable
@@ -235,7 +251,9 @@ class EditScreen extends React.Component {
                                 }
                             }
                             >
-                            <Text>-</Text>
+                            <Text
+                                style={gen_styles.box_btn_txt}
+                            >-</Text>
                         </Pressable>
                     </View>
                     {/* Mind UpDown */}
@@ -250,10 +268,14 @@ class EditScreen extends React.Component {
                                 this.forceUpdate()
                             }}
                             >
-                            <Text>+</Text>
+                            <Text
+                                style={gen_styles.box_btn_txt}
+                            >+</Text>
                         </Pressable>
                         <Text>Mind</Text>
-                        <Text>
+                        <Text
+                            style={gen_styles.box_vlu_txt}
+                        >
                             {this.state.mind}
                         </Text>
                         <Pressable
@@ -270,12 +292,14 @@ class EditScreen extends React.Component {
                                 }
                             }
                             >
-                            <Text>-</Text>
+                            <Text
+                                style={gen_styles.box_btn_txt}
+                            >-</Text>
                         </Pressable>
                     </View>
                 </View>
                 {/* Gold Row */}
-                <View style={gen_styles.form_row}>
+                <View style={gen_styles.center_form_row}>
                     <Text style={gen_styles.label}>Gold</Text>
                     <TextInput
                         style={gen_styles.input}
@@ -288,7 +312,7 @@ class EditScreen extends React.Component {
                 {/* Inventory Row */}
                 <Text style={gen_styles.subheader}>Inventory</Text>
 
-                <View style={gen_styles.form_row}>
+                <View style={gen_styles.center_form_row}>
                       <TextInput
                           style={gen_styles.input_ML}
                           onChangeText={this.heroChange("invt")}
@@ -299,8 +323,8 @@ class EditScreen extends React.Component {
                       </TextInput>
                 </View>
 
-                {/* Campaign Row */}
-                <View style={gen_styles.form_row}>
+                {/* Campaign Title Row */}
+                <View style={gen_styles.center_form_row}>
                     <TextInput
                         style={gen_styles.subheader}
                         onChangeText={this.heroChange("qnme")}
@@ -308,13 +332,18 @@ class EditScreen extends React.Component {
                         {this.state.qnme}
                     </TextInput>
                 </View>
+                {/* Campaign Label Row */}
                 <View
-                    style={gen_styles.form_row}
+                    style={gen_styles.left_form_row}
                 >
                     <Text style={gen_styles.label}>Completed Quests:</Text>
-
+                </View>
+                {/* Campaign Label Row */}
+                <View
+                    style={gen_styles.center_form_row}
+                >
                     <Pressable
-                        // style={gen_styles.updown_btn}
+                        style={gen_styles.hor_updown_btn}
                         onPress={() => {
                             temp = this.state
                             temp.qcnt = String(parseInt(temp.qcnt) + 1)
@@ -322,16 +351,27 @@ class EditScreen extends React.Component {
                             this.forceUpdate()
                         }}
                     >
-                        <Text>+</Text>
+                        <Text
+                            style={gen_styles.box_btn_txt}
+                        >+</Text>
                     </Pressable>
-                    <Text style={gen_styles.input}>
+                    <TextInput
+                        style={gen_styles.input}
+                        onChangeText={() => {
+                            temp = this.state
+                            temp.qcnt = String(parseInt(temp.qcnt))
+                            this.state.qcnt = temp.qcnt
+                            this.forceUpdate()
+                        }}
+                        keyboardType='numeric'
+                    >
                         {this.state.qcnt}
-                    </Text>
+                    </TextInput>
                     <Pressable
-                        // style={gen_styles.updown_btn}
+                        style={gen_styles.hor_updown_btn}
                         onPress={
                             () => {
-                                if(this.state.qcnt > 1){
+                                if(this.state.qcnt > 0){
                                     temp = this.state
                                     temp.qcnt = String(parseInt(temp.qcnt) - 1)
                                     this.state.qcnt = temp.qcnt
@@ -346,7 +386,7 @@ class EditScreen extends React.Component {
                 </View>
 
                 <View
-                    style={gen_styles.form_row}
+                    style={gen_styles.center_form_row}
                 >
                     <Pressable
                         onPress={() => this.createTwoButtonAlert(navigation)}
@@ -354,6 +394,10 @@ class EditScreen extends React.Component {
                     >
                         <Text style={gen_styles.text}>Delete Character</Text>
                     </Pressable>
+                </View>
+                <View
+                    style={gen_styles.center_form_row}
+                >
                     <Pressable
                         onPress={() => this.loadData(this.state.key)}
                         style={gen_styles.form_btn}

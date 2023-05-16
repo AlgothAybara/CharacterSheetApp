@@ -1,0 +1,80 @@
+import React, {useState} from 'react';
+import { Text, View, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import styles from '../StyleSheets/Character_Card.style.js';
+import gen_styles from '../StyleSheets/General.style.js';
+
+
+// Custom component to be filled with passed data
+class Card extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state = props.item;
+        // this.navigation = useNavigation();
+        this.screenName = props.screenName
+
+        this.heroChange = this.heroChange.bind(this);
+        this.setData = this.setData.bind(this);
+    }
+
+    heroChange(name) {
+        return (text) => {
+            this.setState({ [name]:text})
+        }
+    }
+
+    async setData(navigation) {
+        const jsonValue = JSON.stringify(this.state)
+
+        try {
+            gotten = await AsyncStorage.setItem(this.state.key, jsonValue)
+        } catch (e) {
+            console.warn(e)
+        }
+
+        navigation.goBack()
+    }
+
+
+  render () {
+    
+    <View style={styles.container}>
+        <View style={styles.card}>
+            <Text style={gen_styles.header}>{this.state.name}</Text>
+            <Text style={gen_styles.subheader}>{this.state.clss}</Text>
+        
+            <View style={gen_styles.row}>
+                <View style={gen_styles.box}>
+                    <Text>Attack</Text>
+                    <Text> 
+                        {this.state.attk}
+                    </Text>
+                </View>
+                <View style={gen_styles.box}>
+                    <Text>Defense</Text>
+                    <Text>{this.state.defn}</Text>
+                </View>
+                <View style={gen_styles.box}>
+                    <Text>Body</Text>
+                    <Text>{this.state.body}</Text>
+                </View>
+                <View style={gen_styles.box}>
+                    <Text>Mind</Text>
+                    <Text>{this.state.mind}</Text>
+                </View>
+            </View>
+            <Pressable
+                onPress={() => navigation.navigate(screenName, {key: this.state.key})}
+                title='Open Character Sheet'
+                style={styles.button}
+            >
+                <Text style={gen_styles.button}>Open Character Sheet</Text>
+
+            </Pressable>
+        </View>
+    </View>
+  };
+}
+
+export default Card;

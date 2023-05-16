@@ -8,7 +8,11 @@ export default StyleSheet.create(
         alignItems: 'center',
         justifyContent: 'space-between',
         alignContent: 'center',
-        paddingTop: '10%'
+        paddingTop: '10%',
+        width: '100%'
     },
+    header_width:{
+        minwidth:'95%',
+    }
     }
 );

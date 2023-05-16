@@ -5,6 +5,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {   } from 'react-native';
 import { useState } from 'react'
 import Card from '../Components/Character_Card.js'
+//import Card from '../Components/Character_Card_Class.js'
+
 import styles from '../StyleSheets/List_Screen.style.js';
 import gen_styles from '../StyleSheets/General.style.js';
 
@@ -68,7 +70,7 @@ export default function ListScreen() {
           style={styles.list}
           contentContainerStyle={styles.listContainer}
           renderItem={({ item }) =>  (
-            <Card screenName="Edit" item={item} style={styles.card}/>
+            <Card screenName="Edit" item={item}/>
           )}
         />
         {/* Opens New_Screen when pressed */}

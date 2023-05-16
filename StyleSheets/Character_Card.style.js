@@ -37,5 +37,8 @@ export default StyleSheet.create({
         margin: 1,
         padding: 5,
     },
+    header_width:{
+        width:'95%'
+    }
   }
 );
